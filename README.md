@@ -60,13 +60,21 @@ backend/
 │   ├── cultural_agent.py  # Cultural processing agent
 │   └── orchestrator.py    # Agent coordination
 ├── api/v1/endpoints/      # API endpoints
-│   ├── stories_simple.py  # Story generation APIs
-│   ├── emotions_simple.py # Emotion analysis APIs
+│   ├── stories_opensource.py  # Open Source AI story generation APIs
+│   ├── stories_ai.py      # Proprietary AI story generation APIs
+│   ├── stories_simple.py  # Simple story generation APIs (fallback)
+│   ├── emotions_opensource.py  # Open Source AI emotion analysis APIs
+│   ├── emotions_ai.py     # Proprietary AI emotion analysis APIs
+│   ├── emotions_simple.py # Simple emotion analysis APIs (fallback)
 │   ├── cultural.py        # Cultural processing APIs
 │   └── workflows.py       # Workflow management APIs
 ├── models/                # AI model implementations
-│   ├── story_generator_simple.py    # Telugu story generation
-│   └── emotion_analyzer_simple.py   # Emotion analysis
+│   ├── story_generator_opensource.py  # Open Source AI Telugu story generation
+│   ├── story_generator_ai.py          # Proprietary AI Telugu story generation
+│   ├── story_generator_simple.py      # Simple Telugu story generation (fallback)
+│   ├── emotion_analyzer_opensource.py  # Open Source AI emotion analysis
+│   ├── emotion_analyzer_ai.py          # Proprietary AI emotion analysis
+│   └── emotion_analyzer_simple.py      # Simple emotion analysis (fallback)
 └── core/                  # Core configuration
     └── config.py          # System settings
 ```
@@ -90,7 +98,11 @@ frontend/src/
 
 ### AI Models
 - **Telugu Story Generator**: Real transformer-based model for authentic Telugu narratives
+  - **Open Source Model**: `ai4bharat/indic-bart` - A model that supports Telugu language
+  - **Fallback Model**: `facebook/mbart-large-50` - A multilingual model for backup
 - **Emotion Analyzer**: Advanced sentiment analysis for Telugu content
+  - **Emotion Model**: `j-hartmann/emotion-english-distilroberta-base` - For emotion detection
+  - **Sentiment Model**: `nlptown/bert-base-multilingual-uncased-sentiment` - For sentiment analysis
 - **Cultural Processor**: Telugu cultural knowledge integration
 - **Character Developer**: Deep character psychology modeling
 
@@ -130,9 +142,9 @@ npm start
 
 ## 🌐 Access URLs
 
-- **Frontend Dashboard**: https://work-2-lgnjybaibjmwkfyv.prod-runtime.all-hands.dev
-- **Backend API**: https://work-1-lgnjybaibjmwkfyv.prod-runtime.all-hands.dev
-- **API Documentation**: https://work-1-lgnjybaibjmwkfyv.prod-runtime.all-hands.dev/docs
+- **Frontend Dashboard**: https://work-2-mdgzgjjgwsxwlxtv.prod-runtime.all-hands.dev
+- **Backend API**: https://work-1-mdgzgjjgwsxwlxtv.prod-runtime.all-hands.dev
+- **API Documentation**: https://work-1-mdgzgjjgwsxwlxtv.prod-runtime.all-hands.dev/docs
 
 ## 📊 System Status
 
@@ -154,11 +166,17 @@ npm start
 - **External URLs**: Both services accessible via external domains
 - **CORS Configuration**: Properly configured for cross-origin requests
 
+### ✅ Recently Completed
+- **Real AI Model Integration**: Implemented open-source Hugging Face models
+- **Emotion Analysis UI**: Fully functional emotion analysis interface
+- **React Query Integration**: Data fetching for all components
+- **AI Model Enhancement**: Installed advanced ML dependencies (torch, transformers)
+
 ### 🚧 In Progress
-- **React Query Integration**: Debugging data fetching for dropdown population
-- **AI Model Enhancement**: Installing advanced ML dependencies (torch, transformers)
 - **Database Integration**: PostgreSQL and Redis setup for persistence
 - **Testing Suite**: Comprehensive test coverage implementation
+- **Cultural Analysis UI**: Enhancing the cultural analysis interface
+- **Agent Management UI**: Completing the agent management interface
 
 ## 🔧 Technology Stack
 
@@ -186,8 +204,10 @@ npm start
 - **Process Management**: PM2 for production
 
 ### AI & ML
-- **Models**: Transformer-based Telugu language models
-- **Processing**: Custom emotion analysis algorithms
+- **Models**: Hugging Face transformer-based Telugu language models
+  - **Story Generation**: `ai4bharat/indic-bart`, `facebook/mbart-large-50`
+  - **Emotion Analysis**: `j-hartmann/emotion-english-distilroberta-base`, `nlptown/bert-base-multilingual-uncased-sentiment`
+- **Processing**: Real AI-powered emotion analysis algorithms
 - **Cultural Data**: Comprehensive Telugu cultural knowledge base
 - **Multi-Agent**: Coordinated AI agent system
 
@@ -213,9 +233,11 @@ npm start
 - `POST /stories/generate` - Generate complete Telugu story
 
 ### Emotion Analysis Endpoints
-- `POST /emotions/analyze` - Analyze emotional content
-- `GET /emotions/categories` - Get emotion classification categories
-- `POST /emotions/sentiment` - Perform sentiment analysis
+- `POST /emotions/analyze` - Analyze emotional content in Telugu text
+- `GET /emotions/supported-emotions` - Get supported emotions
+- `GET /emotions/cultural-contexts` - Get supported cultural contexts
+- `POST /emotions/emotional-arc` - Analyze the emotional arc of a text
+- `GET /emotions/statistics` - Get emotion analysis statistics
 
 ### Cultural Processing Endpoints
 - `GET /cultural/festivals` - Telugu festivals and celebrations
