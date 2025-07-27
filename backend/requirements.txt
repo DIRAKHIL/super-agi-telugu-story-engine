@@ -1,0 +1,49 @@
+# Core Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# AI/ML Libraries
+transformers==4.45.0
+torch==2.5.1
+sentence-transformers==3.3.1
+openai==1.54.0
+langchain==0.3.7
+langchain-openai==0.2.8
+huggingface-hub==0.26.2
+accelerate==1.1.1
+
+# Telugu Language Processing
+indic-transliteration==2.3.37
+polyglot==16.7.4
+nltk==3.8.1
+
+# Database
+sqlalchemy==2.0.36
+alembic==1.14.0
+psycopg2-binary==2.9.10
+redis==5.2.0
+asyncpg==0.30.0
+
+# API & Web
+httpx==0.28.1
+aiofiles==24.1.0
+python-multipart==0.0.12
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# Monitoring & Logging
+prometheus-client==0.21.1
+structlog==24.4.0
+sentry-sdk==2.19.0
+
+# Development
+pytest==8.3.4
+pytest-asyncio==0.24.0
+black==24.10.0
+isort==5.13.2
+mypy==1.13.0
+
+# Production
+gunicorn==23.0.0
