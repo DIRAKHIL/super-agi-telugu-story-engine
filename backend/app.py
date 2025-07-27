@@ -30,8 +30,8 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "http://localhost:12001",
-        "https://work-1-lgnjybaibjmwkfyv.prod-runtime.all-hands.dev",
-        "https://work-2-lgnjybaibjmwkfyv.prod-runtime.all-hands.dev"
+        "https://work-1-mdgzgjjgwsxwlxtv.prod-runtime.all-hands.dev",
+        "https://work-2-mdgzgjjgwsxwlxtv.prod-runtime.all-hands.dev"
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -73,18 +73,48 @@ async def health_check():
 
 # Import and include API routes
 try:
-    from api.v1.endpoints.stories_simple import router as stories_router
+    # Try to load Open Source AI-powered endpoints first
+    from api.v1.endpoints.stories_opensource import router as stories_router
     app.include_router(stories_router, prefix="/api/v1/stories", tags=["stories"])
-    logger.info("Stories API loaded successfully")
+    logger.info("Open Source AI-powered Stories API loaded successfully")
 except Exception as e:
-    logger.warning(f"Could not load stories API: {e}")
+    logger.warning(f"Could not load Open Source AI-powered stories API: {e}")
+    try:
+        # Try to load proprietary AI-powered endpoints next
+        from api.v1.endpoints.stories_ai import router as stories_router
+        app.include_router(stories_router, prefix="/api/v1/stories", tags=["stories"])
+        logger.info("Proprietary AI-powered Stories API loaded as fallback")
+    except Exception as e2:
+        logger.warning(f"Could not load proprietary AI-powered stories API: {e2}")
+        try:
+            # Fall back to simple endpoints if both AI endpoints fail
+            from api.v1.endpoints.stories_simple import router as stories_router
+            app.include_router(stories_router, prefix="/api/v1/stories", tags=["stories"])
+            logger.info("Simple Stories API loaded as fallback")
+        except Exception as e3:
+            logger.error(f"Could not load any stories API: {e3}")
 
 try:
-    from api.v1.endpoints.emotions_simple import router as emotions_router
+    # Try to load Open Source AI-powered endpoints first
+    from api.v1.endpoints.emotions_opensource import router as emotions_router
     app.include_router(emotions_router, prefix="/api/v1/emotions", tags=["emotions"])
-    logger.info("Emotions API loaded successfully")
+    logger.info("Open Source AI-powered Emotions API loaded successfully")
 except Exception as e:
-    logger.warning(f"Could not load emotions API: {e}")
+    logger.warning(f"Could not load Open Source AI-powered emotions API: {e}")
+    try:
+        # Try to load proprietary AI-powered endpoints next
+        from api.v1.endpoints.emotions_ai import router as emotions_router
+        app.include_router(emotions_router, prefix="/api/v1/emotions", tags=["emotions"])
+        logger.info("Proprietary AI-powered Emotions API loaded as fallback")
+    except Exception as e2:
+        logger.warning(f"Could not load proprietary AI-powered emotions API: {e2}")
+        try:
+            # Fall back to simple endpoints if both AI endpoints fail
+            from api.v1.endpoints.emotions_simple import router as emotions_router
+            app.include_router(emotions_router, prefix="/api/v1/emotions", tags=["emotions"])
+            logger.info("Simple Emotions API loaded as fallback")
+        except Exception as e3:
+            logger.error(f"Could not load any emotions API: {e3}")
 
 # Add basic endpoints for missing APIs
 from fastapi import APIRouter
@@ -148,5 +178,7 @@ if __name__ == "__main__":
         host="0.0.0.0",
         port=12000,
         reload=True,
-        log_level="info"
+        log_level="info",
+        forwarded_allow_ips="*",
+        proxy_headers=True
     )
