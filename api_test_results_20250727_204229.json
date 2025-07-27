@@ -1,0 +1,128 @@
+{
+  "total_tests": 20,
+  "passed_tests": 20,
+  "failed_tests": 0,
+  "skipped_tests": 0,
+  "test_details": [
+    {
+      "name": "Root Endpoint",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Health Endpoint",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Story Generation Task Submission",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Story Generation Task Completion",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Story Content Verification",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Story Genres",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Story Settings",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Story Themes",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Story Statistics",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Emotion Analysis",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Emotion Content Verification",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Emotional Arc Analysis",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Emotional Arc Content Verification",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Supported Emotions",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Cultural Contexts",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Emotions Statistics",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Agents Statistics",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Agents Status",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Cultural Festivals",
+      "status": "passed",
+      "error": null,
+      "response": null
+    },
+    {
+      "name": "Workflows Active",
+      "status": "passed",
+      "error": null,
+      "response": null
+    }
+  ]
+}
