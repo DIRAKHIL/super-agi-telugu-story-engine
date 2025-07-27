@@ -9,7 +9,7 @@ from typing import Dict, List, Any, Optional
 from pydantic import BaseModel
 import logging
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, pipeline
 from huggingface_hub import login
 
 logger = logging.getLogger(__name__)
@@ -42,29 +42,19 @@ class TeluguStoryGeneratorOpenSource:
     """Open Source AI-powered Telugu Story Generator using Hugging Face models"""
     
     def __init__(self):
-        self.model_name = "ai4bharat/indic-bart"  # A model that supports Telugu
+        self.model_name = "facebook/mbart-large-50"  # A model that supports Telugu
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         logger.info(f"Using device: {self.device}")
         
         # Load model and tokenizer
         try:
             self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
-            self.model = AutoModelForCausalLM.from_pretrained(self.model_name).to(self.device)
+            self.model = AutoModelForSeq2SeqLM.from_pretrained(self.model_name).to(self.device)
             logger.info(f"Loaded model: {self.model_name}")
             self.model_loaded = True
         except Exception as e:
             logger.error(f"Error loading model: {str(e)}")
             self.model_loaded = False
-            # Fall back to a simpler model if the main one fails
-            try:
-                self.model_name = "facebook/mbart-large-50"
-                self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
-                self.model = AutoModelForCausalLM.from_pretrained(self.model_name).to(self.device)
-                logger.info(f"Loaded fallback model: {self.model_name}")
-                self.model_loaded = True
-            except Exception as e2:
-                logger.error(f"Error loading fallback model: {str(e2)}")
-                self.model_loaded = False
         
         self.telugu_settings = self._load_telugu_settings()
         self.telugu_themes = self._load_telugu_themes()
@@ -139,10 +129,13 @@ class TeluguStoryGeneratorOpenSource:
                 raise Exception("Model not loaded properly")
             
             # Create the prompt
-            prompt = self._create_story_prompt(request)
+            prompt = request.prompt
             
-            # Generate text
-            inputs = self.tokenizer(prompt, return_tensors="pt").to(self.device)
+            # Set the source language
+            self.tokenizer.src_lang = "en_XX"
+            
+            # Encode the input
+            inputs = self.tokenizer(prompt, return_tensors="pt", max_length=512, truncation=True).to(self.device)
             
             # Run generation in a separate thread to avoid blocking
             loop = asyncio.get_event_loop()
@@ -155,15 +148,22 @@ class TeluguStoryGeneratorOpenSource:
                     top_p=request.top_p,
                     top_k=request.top_k,
                     do_sample=True,
-                    num_return_sequences=1
+                    num_return_sequences=1,
+                    forced_bos_token_id=self.tokenizer.lang_code_to_id["te_IN"]  # Force Telugu output
                 )
             )
             
             # Decode the generated text
             story = self.tokenizer.decode(output[0], skip_special_tokens=True)
             
-            # Remove the prompt from the generated text
-            story = story.replace(prompt, "").strip()
+            # Add Telugu context based on the request
+            telugu_setting = self._get_telugu_setting(request.setting)
+            telugu_theme = self._get_telugu_theme(request.theme)
+            characters = request.characters if request.characters else ["రాము", "సీత"]
+            
+            # Add Telugu context to the beginning of the story
+            telugu_context = f"{telugu_setting}లో {characters[0]} {telugu_theme} గురించి: "
+            story = telugu_context + story
             
             # If the story is too short, add some content
             if len(story) < 100:
