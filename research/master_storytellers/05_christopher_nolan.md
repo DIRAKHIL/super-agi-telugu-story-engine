@@ -22,7 +22,7 @@
 ### Philosophical Foundation
 > "To Nolan, time is not an unstoppable, forward-marching force beyond our control. It is merely another storytelling tool, a dimension that can be stepped outside and manipulated to his will."
 
-## 🏗️ Revolutionary Storytelling Techniques
+## 🏗️ Signature Storytelling Techniques
 
 ### 1. Non-Linear Temporal Architecture
 **Time Manipulation Philosophy**: Time as sculptural material for narrative construction

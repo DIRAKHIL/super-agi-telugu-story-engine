@@ -23,7 +23,7 @@
 ### Philosophical Foundation
 > "The role of the artist is to not look away." - Kurosawa's commitment to confronting difficult truths about human nature and society
 
-## 🏗️ Revolutionary Storytelling Techniques
+## 🏗️ Signature Storytelling Techniques
 
 ### 1. Multi-Camera Technique
 **Technical Innovation**: Using multiple cameras (up to 9) simultaneously for single scenes
