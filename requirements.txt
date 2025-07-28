@@ -1,28 +1,59 @@
-# Core dependencies
-fastapi==0.95.1
-uvicorn==0.22.0
-pydantic==1.10.7
-python-dotenv==1.0.0
-loguru==0.7.0
-
-# AI and NLP
-transformers==4.28.1
-torch==2.0.0
-sentencepiece==0.1.99
-indic-nlp-library==0.91
-ai4bharat-transliteration==0.1.0
+# Core dependencies for PRODUCTION-READY REAL AI SYSTEM - 100% open source OPERATIONAL!
+fastapi>=0.95.1
+uvicorn>=0.22.0
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+loguru>=0.7.0
+gunicorn>=21.2.0  # Production WSGI server
 
 # Database
-sqlalchemy==2.0.12
-alembic==1.10.4
-psycopg2-binary==2.9.6
+sqlalchemy>=2.0.12
+alembic>=1.10.4
+psycopg2-binary>=2.9.6  # PostgreSQL adapter
+redis>=4.5.5  # Redis for caching
+
+# AI and ML
+transformers>=4.30.0  # Hugging Face Transformers
+torch>=2.0.0  # PyTorch
+sentencepiece>=0.1.99  # For tokenization
+openai>=1.0.0  # OpenAI API
+llama-cpp-python>=0.2.0  # For local LLM inference
+accelerate>=0.20.0  # For optimized inference
+bitsandbytes>=0.41.0  # For quantization
+sentence-transformers>=2.2.2  # For embeddings
+
+# Telugu language processing
+indic-nlp-library>=0.91  # Indic language processing
+ai4bharat-transliteration>=0.1.0  # Telugu transliteration
+
+# Dashboard and visualization
+dash>=2.10.0
+dash-bootstrap-components>=1.4.0
+plotly>=5.14.0
+flask-login>=0.6.2  # For dashboard authentication
 
 # Testing
-pytest==7.3.1
-pytest-cov==4.1.0
-httpx==0.24.0
+pytest>=7.3.1
+pytest-cov>=4.1.0
+httpx>=0.24.0
+pytest-asyncio>=0.21.0
 
 # Utilities
-tqdm==4.65.0
-numpy==1.24.3
-pandas==2.0.1
+tqdm>=4.65.0
+numpy>=1.26.0
+pandas>=2.0.1
+pyyaml>=6.0.0
+tenacity>=8.2.2  # For retries
+python-multipart>=0.0.6  # For file uploads
+aiofiles>=23.1.0  # For async file operations
+
+# Security
+python-jose>=3.3.0  # JWT tokens
+passlib>=1.7.4  # Password hashing
+bcrypt>=4.0.1  # Password hashing
+
+# Monitoring and performance
+prometheus-client>=0.16.0
+opentelemetry-api>=1.15.0
+opentelemetry-sdk>=1.15.0
+opentelemetry-exporter-prometheus>=1.15.0

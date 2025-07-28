@@ -93,7 +93,8 @@ def create_app(config):
         Generate a story based on the provided parameters.
         """
         try:
-            story = generator.generate_story(request.dict())
+            # Use model_dump instead of dict for Pydantic v2 compatibility
+            story = generator.generate_story(request.model_dump())
             return story
         except ValueError as e:
             raise HTTPException(status_code=400, detail=str(e))

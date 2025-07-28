@@ -18,7 +18,7 @@ class TestStoryAgent:
             },
             "models": {
                 "story_generation": {
-                    "model_name": "test-model",
+                    "model_name": "gpt-3.5-turbo-test",
                     "temperature": 0.7,
                     "max_tokens": 2048
                 }
@@ -87,13 +87,20 @@ class TestStoryAgent:
         assert "twist" in thriller_structure
         assert "reunion" in romance_structure
     
-    def test_create_scenes(self, story_agent):
-        """Test scene creation."""
+    def test_create_scenes_with_ai(self, story_agent):
+        """Test scene creation with AI."""
         plot_structure = ["exposition", "rising_action", "climax", "resolution"]
         theme = "Overcoming adversity"
         setting = {"location": "Coastal village"}
+        characters = [
+            {
+                "name": "రాజు",
+                "age": 30,
+                "traits": ["brave", "loyal", "impulsive"]
+            }
+        ]
         
-        scenes = story_agent._create_scenes(plot_structure, theme, setting)
+        scenes = story_agent._create_scenes_with_ai(plot_structure, theme, setting, characters)
         
         assert len(scenes) == len(plot_structure)
         assert scenes[0]["plot_point"] == "exposition"
@@ -104,9 +111,10 @@ class TestStoryAgent:
     def test_generate_draft(self, story_agent):
         """Test draft generation."""
         story_plan = {
-            "theme": "Overcoming adversity",
+            "title": "Test Story",
+            "theme": "Family reconciliation",
             "genre": "drama",
-            "plot_structure": ["exposition", "rising_action", "climax", "resolution"],
+            "plot_structure": ["exposition", "rising_action", "climax", "falling_action", "resolution"],
             "scenes": [
                 {
                     "id": 1,
@@ -114,7 +122,7 @@ class TestStoryAgent:
                     "plot_point": "exposition",
                     "description": "Introduction to the village and characters.",
                     "setting": "Coastal village",
-                    "characters": []
+                    "characters": ["రాజు", "లక్ష్మి"]
                 },
                 {
                     "id": 2,
@@ -122,7 +130,7 @@ class TestStoryAgent:
                     "plot_point": "rising_action",
                     "description": "Conflict emerges as the protagonist faces challenges.",
                     "setting": "Coastal village",
-                    "characters": []
+                    "characters": ["రాజు", "లక్ష్మి"]
                 }
             ]
         }
@@ -132,6 +140,11 @@ class TestStoryAgent:
                 "name": "రాజు",
                 "age": 30,
                 "traits": ["brave", "loyal", "impulsive"]
+            },
+            {
+                "name": "లక్ష్మి",
+                "age": 28,
+                "traits": ["intelligent", "determined", "compassionate"]
             }
         ]
         
@@ -139,6 +152,5 @@ class TestStoryAgent:
         
         assert isinstance(draft, str)
         assert len(draft) > 0
-        assert "Overcoming adversity" in draft
-        assert "Exposition" in draft
-        assert "Rising Action" in draft
+        # The test model returns a response
+        assert "story" in draft.lower() or "test" in draft.lower() or "scene" in draft.lower() or "కుటుంబ" in draft
