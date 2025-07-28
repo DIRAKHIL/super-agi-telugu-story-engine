@@ -1,53 +1,7 @@
 {
-  "files_checked": 28,
-  "total_word_count": 102215,
-  "issues_found": [
-    {
-      "file": "research/master_storytellers/04_akira_kurosawa.md",
-      "type": "missing_sections",
-      "message": "Missing sections: \ud83c\udfd7\ufe0f Signature Storytelling Techniques"
-    },
-    {
-      "file": "research/master_storytellers/01_ss_rajamouli.md",
-      "type": "missing_sections",
-      "message": "Missing sections: \ud83c\udfad Character Development Philosophy"
-    },
-    {
-      "file": "research/master_storytellers/README.md",
-      "type": "missing_sections",
-      "message": "Missing sections: \ud83d\udccb Profile Overview, \ud83c\udfac Cinematic Philosophy & Vision, \ud83c\udfd7\ufe0f Signature Storytelling Techniques, \ud83c\udfad Character Development Philosophy, \ud83c\udfc6.*Impact, \ud83c\udf93 Lessons for AI Storytelling"
-    },
-    {
-      "file": "research/master_storytellers/10_trivikram_srinivas.md",
-      "type": "missing_sections",
-      "message": "Missing sections: \ud83c\udfc6.*Impact"
-    },
-    {
-      "file": "research/master_storytellers/05_christopher_nolan.md",
-      "type": "missing_sections",
-      "message": "Missing sections: \ud83c\udfd7\ufe0f Signature Storytelling Techniques"
-    },
-    {
-      "file": "research/master_storytellers/03_steven_spielberg.md",
-      "type": "missing_sections",
-      "message": "Missing sections: \ud83c\udfad Character Development Philosophy"
-    },
-    {
-      "file": "research/master_storytellers/07_bapu.md",
-      "type": "missing_sections",
-      "message": "Missing sections: \ud83c\udfc6.*Impact"
-    },
-    {
-      "file": "research/master_storytellers/06_k_viswanath.md",
-      "type": "missing_sections",
-      "message": "Missing sections: \ud83c\udfc6.*Impact"
-    },
-    {
-      "file": "research/master_storytellers/02_andrei_tarkovsky.md",
-      "type": "missing_sections",
-      "message": "Missing sections: \ud83c\udfd7\ufe0f Signature Storytelling Techniques"
-    }
-  ],
+  "files_checked": 31,
+  "total_word_count": 108038,
+  "issues_found": [],
   "statistics": {
     "README.md": {
       "word_count": [
@@ -78,25 +32,25 @@
     "storyteller_count": {
       "actual": 12,
       "files": [
+        "05_christopher_nolan.md",
+        "06_k_viswanath.md",
         "04_akira_kurosawa.md",
+        "03_steven_spielberg.md",
         "09_jandhyala.md",
+        "07_bapu.md",
         "01_ss_rajamouli.md",
+        "08_ram_gopal_varma.md",
+        "02_andrei_tarkovsky.md",
         "11_hayao_miyazaki.md",
         "10_trivikram_srinivas.md",
-        "05_christopher_nolan.md",
-        "12_quentin_tarantino.md",
-        "03_steven_spielberg.md",
-        "07_bapu.md",
-        "06_k_viswanath.md",
-        "02_andrei_tarkovsky.md",
-        "08_ram_gopal_varma.md"
+        "12_quentin_tarantino.md"
       ]
     }
   },
   "confidence_scores": {
-    "overall": 55,
+    "overall": 100,
     "content_completeness": 100,
-    "structure_consistency": 10,
-    "cross_file_consistency": 80.0
+    "structure_consistency": 100,
+    "cross_file_consistency": 95.0
   }
 }
