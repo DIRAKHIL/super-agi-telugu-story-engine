@@ -464,21 +464,6 @@ We welcome contributions from the community! Please see our [Contributing Guidel
 2. **"Integrating Domain Expertise in AI Storytelling"** - ACL 2024
 3. **"Telugu Natural Language Processing for Creative Applications"** - ICON 2024
 
-## 🙏 Acknowledgments
-
-### Research Institutions
-- **Indian Institute of Technology (IIT)** - Research collaboration
-- **International Institute of Information Technology (IIIT)** - Telugu NLP research
-- **Telugu University** - Cultural knowledge and validation
-- **Universities**: Collaborations with linguistics and computer science departments
-- **Cultural Institutions**: Partnerships with Telugu cultural organizations
-
-### Expert Advisors
-- **Dr. Rajesh Kumar** - Telugu Literature Expert
-- **Dr. Priya Sharma** - Psychology and Narrative Therapy
-- **Advocate Suresh Reddy** - Legal Ethics and Storytelling
-- **Dr. Anita Rao** - Medical Narrative and Ethics
-- **50+ Film Industry Professionals** - Expert interviews and insights
 
 ### Community Contributors
 - **Telugu Writers Association** - Cultural guidance and feedback
