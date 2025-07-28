@@ -1,0 +1,77 @@
+# Production Requirements for Telugu Story Engine
+# Core AI/ML Stack
+torch>=2.1.0
+transformers>=4.35.0
+accelerate>=0.24.0
+peft>=0.6.0
+bitsandbytes>=0.41.0
+flash-attn>=2.3.0
+sentence-transformers>=2.2.2
+datasets>=2.14.0
+
+# Telugu/Indic NLP
+indic-nlp-library>=0.81
+indicnlp>=0.1.0
+polyglot>=16.7.4
+nltk>=3.8.1
+spacy>=3.7.0
+
+# API Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.5.0
+python-multipart>=0.0.6
+websockets>=12.0
+socketio>=5.9.0
+python-socketio>=5.9.0
+
+# Database & Caching
+sqlalchemy>=2.0.0
+alembic>=1.12.0
+asyncpg>=0.29.0
+redis>=5.0.0
+celery>=5.3.0
+
+# Monitoring & Logging
+prometheus-client>=0.19.0
+structlog>=23.2.0
+rich>=13.7.0
+loguru>=0.7.2
+
+# Security & Authentication
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+python-multipart>=0.0.6
+
+# Development & Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+httpx>=0.25.0
+factory-boy>=3.3.0
+
+# Utilities
+python-dotenv>=1.0.0
+pyyaml>=6.0.1
+click>=8.1.7
+tqdm>=4.66.0
+numpy>=1.24.0
+pandas>=2.1.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# Production Deployment
+gunicorn>=21.2.0
+docker>=6.1.0
+kubernetes>=28.1.0
+
+# Dashboard & Frontend
+streamlit>=1.28.0
+plotly>=5.17.0
+dash>=2.14.0
+bokeh>=3.3.0
+
+# Model Serving
+triton-client>=2.40.0
+onnx>=1.15.0
+onnxruntime>=1.16.0
