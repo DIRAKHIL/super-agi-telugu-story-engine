@@ -209,10 +209,12 @@ class TeluguStoryDashboard:
                 st.metric("Total Memory", f"{total_memory:.1f} MB")
             
             with col3:
-                avg_load_time = np.mean([
-                    info.get("load_time", 0) for info in model_info.values() 
-                    if info.get("load_time", 0) > 0
-                ])
+                load_times = []
+                for info in model_info.values():
+                    load_time = info.get("load_time", 0)
+                    if isinstance(load_time, (int, float)) and load_time > 0:
+                        load_times.append(load_time)
+                avg_load_time = np.mean(load_times) if load_times else 0
                 st.metric("Avg Load Time", f"{avg_load_time:.1f}s")
             
             # Model details
