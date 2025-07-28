@@ -23,7 +23,7 @@
 ### Fundamental Beliefs
 > "In the end everything can be reduced to the one simple element, which is all a person can count upon in his existence: the capacity to love. That element can grow within the soul to become the supreme factor, which determines the meaning of a person's life. My function is to make whoever sees my films aware of his need to love and to give his love, and aware that beauty is summoning him."
 
-## 🏗️ Revolutionary Storytelling Techniques
+## 🏗️ Signature Storytelling Techniques
 
 ### 1. Non-Linear Temporal Structure
 **Philosophy**: Time as fluid, interconnected experience rather than linear progression

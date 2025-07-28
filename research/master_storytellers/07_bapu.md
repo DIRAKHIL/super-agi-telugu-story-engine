@@ -221,7 +221,7 @@
 - **Depth Creation**: Multiple visual planes creating dimensional storytelling
 - **Symbolic Framing**: Visual metaphors through composition and framing
 
-## 📈 Cultural Impact & Legacy
+## 🏆 Cultural Impact & Legacy
 
 ### Mythological Cinema Renaissance
 **Genre Revival**: Renewed interest in mythological and historical films
