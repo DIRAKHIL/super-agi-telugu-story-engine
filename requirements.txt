@@ -1,0 +1,28 @@
+# Core dependencies
+fastapi==0.95.1
+uvicorn==0.22.0
+pydantic==1.10.7
+python-dotenv==1.0.0
+loguru==0.7.0
+
+# AI and NLP
+transformers==4.28.1
+torch==2.0.0
+sentencepiece==0.1.99
+indic-nlp-library==0.91
+ai4bharat-transliteration==0.1.0
+
+# Database
+sqlalchemy==2.0.12
+alembic==1.10.4
+psycopg2-binary==2.9.6
+
+# Testing
+pytest==7.3.1
+pytest-cov==4.1.0
+httpx==0.24.0
+
+# Utilities
+tqdm==4.65.0
+numpy==1.24.3
+pandas==2.0.1
