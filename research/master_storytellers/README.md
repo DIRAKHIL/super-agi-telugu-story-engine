@@ -438,6 +438,6 @@ For questions, suggestions, or contributions to this research module:
 
 **Last Updated**: July 28, 2025  
 **Version**: 3.0  
-**Total Word Count**: 120,000+ words across all profiles  
+**Total Word Count**: 30,000+ words across all profiles  
 **Master Storytellers**: 12 comprehensive profiles (7 international + 5 Telugu)  
-**Research Sources**: 1000+ academic and industry references
+**Research Sources**: 200+ academic and industry references

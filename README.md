@@ -4,10 +4,10 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Telugu](https://img.shields.io/badge/language-Telugu-orange.svg)](https://en.wikipedia.org/wiki/Telugu_language)
 [![AI](https://img.shields.io/badge/AI-Multi--Agent-green.svg)](https://en.wikipedia.org/wiki/Multi-agent_system)
-[![Research](https://img.shields.io/badge/Research-120k%2B%20words-blue.svg)](research/)
-[![Citations](https://img.shields.io/badge/Citations-1000%2B-green.svg)](research/)
+[![Research](https://img.shields.io/badge/Research-100k%2B%20words-blue.svg)](research/)
+[![Citations](https://img.shields.io/badge/Citations-500%2B-green.svg)](research/)
 
-> A sophisticated multi-agent AI system that generates emotionally resonant, culturally authentic Telugu stories by integrating deep domain expertise from psychology, law, medicine, spirituality, and leadership. Built on **120,000+ words of comprehensive research** with **1000+ academic citations** and insights from 12 master storytellers and elite professionals.
+> A sophisticated multi-agent AI system that generates emotionally resonant, culturally authentic Telugu stories by integrating deep domain expertise from psychology, law, medicine, spirituality, and leadership. Built on **100,000+ words of comprehensive research** with **500+ academic citations** and insights from 12 master storytellers and elite professionals.
 
 ## 🌟 Overview
 
@@ -23,15 +23,15 @@ This project combines cutting-edge artificial intelligence with deep cultural un
 - **⚖️ Domain Expertise**: Integration of knowledge from law, medicine, psychology, spirituality, and leadership
 - **🔄 Iterative Refinement**: Collaborative improvement through multiple agent passes
 - **🌐 Scalable Design**: Modular architecture supporting easy extension and customization
-- **📚 Research-Driven**: Built on comprehensive research with 1000+ academic citations
+- **📚 Research-Driven**: Built on comprehensive research with 500+ academic citations
 - **🎬 Master Storyteller Analysis**: Insights from 12 master storytellers including Rajamouli, Tarkovsky, Spielberg, Miyazaki, Tarantino
 - **👥 Elite Professional Insights**: Expertise from top professionals across multiple domains
 
 ### Research Foundation
 
 This system is built on **comprehensive research** including:
-- **120,000+ words** of research documentation across 13 specialized modules
-- **1000+ academic citations** and industry references
+- **100,000+ words** of research documentation across 13 specialized modules
+- **500+ academic citations** and industry references
 - **Master storyteller analysis** from 12 global filmmakers (7 international + 5 Telugu)
 - **Elite professional insights** from experts in law, medicine, psychology, religion, and leadership
 - **Cultural analysis** of 300+ Telugu films across 70+ years
@@ -179,8 +179,8 @@ print(f"Word Count: {story['metadata']['word_count']}")
 - **Elite professional insights** from top experts across law, medicine, psychology, religion, and leadership
 
 **[Master Storytellers Analysis Module](research/master_storytellers/)**
-- **120,000+ words** across 12 comprehensive storyteller profiles
-- **1000+ academic and industry references**
+- **30,000+ words** across 12 comprehensive storyteller profiles
+- **200+ academic and industry references**
 - **7 International Masters**: Rajamouli, Tarkovsky, Spielberg, Kurosawa, Nolan, Miyazaki, Tarantino
 - **5 Telugu Cinema Masters**: K. Viswanath, Bapu, Ram Gopal Varma, Jandhyala, Trivikram Srinivas
 - **Complete framework** for AI storytelling implementation
@@ -527,8 +527,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### Research Statistics
 - **Total Research Modules**: 13 comprehensive modules + Master Storytellers Analysis
-- **Word Count**: 120,000+ words of research documentation
-- **Citations**: 1000+ academic and industry references
+- **Word Count**: 100,000+ words of research documentation
+- **Citations**: 500+ academic and industry references
 - **Master Storytellers**: 12 comprehensive profiles (7 international + 5 Telugu)
 - **Code Examples**: 100+ implementation examples
 - **Cultural Analysis**: 300 films, 2,000 participants
